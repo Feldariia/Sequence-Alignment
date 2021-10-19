@@ -1,6 +1,3 @@
-import calc as c
-
-
 # Outputting the sequence alignments
 def print_alignment(g, h, align_arg):
     # Print a slash for any item that does not match within the sequence

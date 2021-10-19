@@ -1,4 +1,5 @@
 # Scoring an alignment based on sequences
+# Imports
 from functools import partial
 import alignment as al
 

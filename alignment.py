@@ -1,7 +1,4 @@
-import calc as c
-import printAlign as p
 from collections import deque
-
 
 # Alignment of two sequences
 def alignments(w, z):

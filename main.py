@@ -43,6 +43,5 @@ for y in items:
         print(score)
 
 # Print statements of items and sequence alignments/calculations
-# print(alignments)
 alsc.align_calc(x, y)
 p.print_alignment(x, y, alsc.align_calc(x, y))
