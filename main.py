@@ -7,7 +7,7 @@
 
 
 # Import packages
-import calc as c
+# import calc as c
 import printAlign as p
 import alignment as al
 import align_score as alsc
@@ -28,15 +28,18 @@ print(items)
 # Add matching array for scoring alignments
 y = items
 match = [(0, 0), (1, None), (2, 1)]
-sc = alsc.alignment_score(x, y, match)
+
+for i in items:
+    print(i)
+    alsc.alignment_score(x, i, match)
 
 # Append input and print
-for alignment in al.alignments(x, y):
-    p.print_alignment(x, y, alignment)
-    print()
+for y in items:
+    for alignment in al.alignments(x, y):
+        p.print_alignment(x, y, alignment)
+        print()
 
 # Print statements of items and sequence alignments/calculations
 # print(alignments)
 alsc.align_calc(x, y)
 p.print_alignment(x, y, alsc.align_calc(x, y))
-print("Score: ", sc)

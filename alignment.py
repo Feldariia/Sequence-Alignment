@@ -25,6 +25,7 @@ def alignments(w, z):
         for head1, tail1, head2, tail2 in sequences:
             for a_elem in alignment_recursion(tail1, tail2):
                 a_elem.appendleft((head1, head2))
+                print(a_elem)
                 yield a_elem
 
     # Return alignment recursion and append to list

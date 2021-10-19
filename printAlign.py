@@ -1,5 +1,5 @@
 import calc as c
-import printAlign as p
+
 
 # Outputting the sequence alignments
 def print_alignment(g, h, align_arg):
