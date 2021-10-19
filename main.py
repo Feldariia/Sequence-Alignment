@@ -30,14 +30,17 @@ y = items
 match = [(0, 0), (1, None), (2, 1)]
 
 for i in items:
-    print(i)
     alsc.alignment_score(x, i, match)
 
+a_elm = []
 # Append input and print
 for y in items:
     for alignment in al.alignments(x, y):
+        a_elm = alignment
+        print(a_elm)
+        score = alsc.alignment_score(x, y, a_elm)
         p.print_alignment(x, y, alignment)
-        print()
+        print(score)
 
 # Print statements of items and sequence alignments/calculations
 # print(alignments)

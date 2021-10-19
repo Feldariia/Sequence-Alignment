@@ -18,8 +18,6 @@ def alignment_score(x, y, match):
             score += score_match
         elif x[a] != y[b]:
             score += score_nomatch
-
-    print(score)
     return score
 
 
