@@ -1,5 +1,5 @@
 # Name: Shannon Mong/Michelle Golden
-# Summary: Sequence Alignment
+# Summary: Sequence Alignment (Brute-Force)
 # Date: 18 Oct 2021
 # Version: 2.0
 # Class: SCS341
@@ -39,25 +39,31 @@ def alignments(x, y):
                 alignment.appendleft((head1, head2))
                 yield alignment
 
+
+    #Return alignment recursion and append to list
     alignments = alignment_recursion(range(len(x)), range(len(y)))
     return map(list, alignments)
 
-    # Push alignments into a list
-    list(alignments(x, y))
+
 
 
 # Outputting the sequence alignments
 def print_alignment(x, y, alignment):
+    #Print a slash for any item that does not match within the sequence
     print("".join(
         "/" if a is None else x[a] for a, _ in alignment
     ))
+    
     print("".join(
         "/" if b is None else y[b] for _, b in alignment
     ))
 
 
+#Collect input
 x = input
 y = input
+
+#Append input and print
 for alignment in alignments(x, y):
     print_alignment(x, y, alignment)
     print()
@@ -71,6 +77,7 @@ for alignment in alignments(x, y):
         score_nomatch = -1
         gap_penalty = -1
 
+        #Scoring method for no matches, a match, and a gap penalty of 1.
         score = 0
         for a, b in match:
             if (a is None) or (b is None):
@@ -83,15 +90,18 @@ for alignment in alignments(x, y):
         return score
 
 
+    #Create data file and append six items to an array
     data = open("datafile.txt", "w")
     items = ["Watch", "Cat", "Mouse", "Lay", "Sing", "Draw"]
 
-    x = items
+
+    #Add matching array for scoring alignments
     y = items
     match = [(0, 0), (1, None), (2, 1)]
     alignment_score(x, y, match)
 
 
+#Calculating the sequence alignments in accordance to score
 def align_calc(x, y):
     return max(
         alignments(x, y),
@@ -99,9 +109,9 @@ def align_calc(x, y):
     )
 
 
+#Print statements of items and sequence alignments/calculations
 print(items)
 print(alignments)
 align_calc(x, y)
 print_alignment(x, y, align_calc(x, y))
-
 
