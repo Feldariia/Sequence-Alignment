@@ -1,5 +1,6 @@
 from collections import deque
 
+
 # Alignment of two sequences
 def alignments(w, z):
     # Recursion method for alignment sequences
